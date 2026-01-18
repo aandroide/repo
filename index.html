@@ -1,24 +1,247 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Repo Aandroide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #e4e4e7;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .logo {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #00d4ff, #7c3aed);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #a1a1aa;
+      font-size: 1rem;
+    }
+
+    .file-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .file-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .file-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #00d4ff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.15);
+    }
+
+    .file-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #7c3aed, #00d4ff);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .file-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    .file-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .file-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.35rem;
+      word-break: break-word;
+    }
+
+    .file-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.875rem;
+      color: #a1a1aa;
+    }
+
+    .file-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .file-meta svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      opacity: 0.7;
+    }
+
+    .download-btn {
+      background: linear-gradient(135deg, #00d4ff, #7c3aed);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #71717a;
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      .file-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .file-meta {
+        justify-content: center;
+      }
+
+      .download-btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Repo Aandroide</h1>
-  <ul>
-    <li>
-      <a href="plugin.program.addonrepoinstaller.zip">
-        plugin.program.addonrepoinstaller.zip
+  <div class="container">
+    <header>
+      <div class="logo">📦</div>
+      <h1>Repo Aandroide</h1>
+      <p class="subtitle">Addon e plugin per Kodi</p>
+    </header>
+
+    <div class="file-list">
+      <a href="plugin.program.addonrepoinstaller.zip" class="file-card">
+        <div class="file-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 10h-2v-2H8l4-4 4 4h-4v2z"/></svg>
+        </div>
+        <div class="file-info">
+          <div class="file-name">plugin.program.addonrepoinstaller.zip</div>
+          <div class="file-meta">
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+              8 Giugno 2025
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
+              136 KB
+            </span>
+          </div>
+        </div>
+        <button class="download-btn">Download</button>
       </a>
-      — 2025-06-08 20:30 — 136 K
-    </li>
-    <li>
-      <a href="plugin.program.chiudipulito.zip">
-        plugin.program.chiudipulito.zip
+
+      <a href="plugin.program.chiudipulito.zip" class="file-card">
+        <div class="file-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6 10h-2v-2H8l4-4 4 4h-4v2z"/></svg>
+        </div>
+        <div class="file-info">
+          <div class="file-name">plugin.program.chiudipulito.zip</div>
+          <div class="file-meta">
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM9 10H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+              19 Gennaio 2026
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
+              175 KB
+            </span>
+          </div>
+        </div>
+        <button class="download-btn">Download</button>
       </a>
-      — 2026-19-01 00:15 — 175 K
-    </li>
-  </ul>
+    </div>
+
+    <footer>
+      <p>Made with ❤️ by <a href="https://github.com/aandroide">Aandroide</a></p>
+    </footer>
+  </div>
 </body>
 </html>
